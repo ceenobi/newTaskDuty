@@ -1,0 +1,71 @@
+* {
+  text-decoration: none !important;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --purple: #974FD0;
+}
+
+a {
+  color: black !important;
+}
+
+a:hover {
+  color: gray !important;
+  transition: 0.3s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.hero h1 span {
+  color: var(--purple)
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.hero button {
+  background-color: var(--purple);
+  color: white;
+  width: 201px;
+  height: 50px;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+}
+
+.addTaskBtn {
+  color: var(--purple);
+  border: none;
+  width: 177px;
+  height: 30px;
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    width: 50%;
+  }
+
+  .hero h1 {
+    font-size: 50px;
+  }
+
+  .heroImg {
+    width: 50%;
+    text-align: end;
+  }
+}

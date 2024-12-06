@@ -90,3 +90,19 @@ export const updateTask = async (req, res, next) => {
     next(error);
   }
 };
+
+export const getASingleTask = async (req, res, next) => {
+  const { taskId } = req.params;
+  try {
+    if (!taskId) {
+      return next(creatHttpError(400, "TaskId is missing"));
+    }
+    const task = await Task.findById(taskId);
+    if (!task) {
+      return next(creatHttpError(404, "task not found"));
+    }
+    res.status(200).json(task);
+  } catch (error) {
+    next(error);
+  }
+};

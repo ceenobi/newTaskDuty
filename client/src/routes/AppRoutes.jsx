@@ -4,6 +4,9 @@ import Home from "../pages/home/Home";
 import MyTask from "../pages/myTasks/MyTask";
 import NewTask from "../pages/newTask/NewTask";
 import AllTask from "../pages/allTasks/AllTask";
+import Login from "../pages/login/Login";
+import Register from "../pages/register/Register";
+import { ProtectedRoutes, PublicRoutes } from "./ProtectedRoutes";
 
 export default function AppRoutes() {
   const routes = [
@@ -17,15 +20,43 @@ export default function AppRoutes() {
         },
         {
           path: "my-tasks",
-          element: <MyTask />,
+          element: (
+            <ProtectedRoutes>
+              <MyTask />
+            </ProtectedRoutes>
+          ),
         },
         {
           path: "new-task",
-          element: <NewTask />,
+          element: (
+            <ProtectedRoutes>
+              <NewTask />
+            </ProtectedRoutes>
+          ),
         },
         {
           path: "all-task",
-          element: <AllTask />,
+          element: (
+            <ProtectedRoutes>
+              <AllTask />
+            </ProtectedRoutes>
+          ),
+        },
+        {
+          path: "login",
+          element: (
+            <PublicRoutes>
+              <Login />
+            </PublicRoutes>
+          ),
+        },
+        {
+          path: "signup",
+          element: (
+            <PublicRoutes>
+              <Register />
+            </PublicRoutes>
+          ),
         },
       ],
     },
